@@ -17,10 +17,10 @@ router.get('/', function (req, res, next) {
 });
 
 // Obtiene un conductor específico.
-router.get('conductor/:id', function (req, res, next) {
-    Conductor.findById(function (err, conductor) {
+router.get('/:id', function (req, res, next) {
+    Conductor.findById(req.params.id, function (err, conductor) {
         if (err) return next(err);
-        res.json(conductor);
+        res.json(conductor);  
     })
 });
 

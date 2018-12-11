@@ -45,6 +45,7 @@ export class ApiService {
     return this.http.get(url, httpOptions).pipe(
       map(this.extraerDatos),
       catchError(this.handleError));
+      
   }
 
   crearConductor(data): Observable<any> {
@@ -53,8 +54,9 @@ export class ApiService {
     );
   }
 
-  actualizarConductor(data): Observable<any> {
-    return this.http.put(apiUrl, data, httpOptions)
+  actualizarConductor(id: String, data): Observable<any> {
+    const url = `${apiUrl}/${id}`;
+    return this.http.put(url, data, httpOptions)
       .pipe(
         catchError(this.handleError)
       );

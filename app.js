@@ -5,7 +5,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/aplicacion-conductores', { promiseLibrary: require('bluebird') })
+mongoose.connect('mongodb://localhost/asignacion-conductores', { promiseLibrary: require('bluebird') })
   .then(() =>  console.log('Conexión exitosa!'))
   .catch((err) => console.error(err));
 

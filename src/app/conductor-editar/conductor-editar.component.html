@@ -1,3 +1,70 @@
-<p>
-  conductor-editar works!
-</p>
+<div class="button-row">
+  <a mat-raised-button color="primary" (click)="detalleConductor()">
+    Mostrar
+  </a>
+</div>
+<form [formGroup]="conductorForm" (ngSubmit)="onFormSubmit(conductorForm.value)">
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Nombres" formControlName="nombres" [errorStateMatcher]="matcher">
+    <mat-error>
+      <span *ngIf="!conductorForm.get('nombres').valid && conductorForm.get('nombres').touched">Por favor ingrese el
+        nombre</span>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Apellidos" formControlName="apellidos" [errorStateMatcher]="matcher">
+    <mat-error>
+      <span *ngIf="!conductorForm.get('apellidos').valid && conductorForm.get('apellidos').touched">Por favor ingrese
+        los apellidos</span>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Estado" formControlName="estado" [errorStateMatcher]="matcher" readonly>
+    <mat-error>
+      <span *ngIf="!conductorForm.get('estado').valid && conductorForm.get('estado').touched">Por favor ingrese
+        los apellidos</span>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Tipo documento" formControlName="tipoDocumento" [errorStateMatcher]="matcher">
+    <mat-error>
+      <span *ngIf="!conductorForm.get('tipoDocumento').valid && conductorForm.get('tipoDocumento').touched">Por favor
+        ingrese el tipo de documento</span>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Número documento" formControlName="numeroDocumento" [errorStateMatcher]="matcher">
+    <mat-error>
+      <span *ngIf="!conductorForm.get('numeroDocumento').valid && conductorForm.get('numeroDocumento').touched">Por
+        favor
+        ingrese el número de documento</span>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Dirección" formControlName="direccion" [errorStateMatcher]="matcher">
+    <mat-error>
+      <span *ngIf="!conductorForm.get('direccion').valid && conductorForm.get('direccion').touched">Por favor ingrese
+        la dirección</span>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Teléfono" formControlName="telefono" [errorStateMatcher]="matcher">
+    <mat-error>
+      <span *ngIf="!conductorForm.get('telefono').valid && conductorForm.get('telefono').touched">Por favor ingrese el
+        teléfono</span>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Correo electrónico" formControlName="correoElectronico" [errorStateMatcher]="matcher">
+    <mat-error>
+      <span *ngIf="!conductorForm.get('correoElectronico').valid && conductorForm.get('correoElectronico').touched">Por
+        favor ingrese el
+        correo electrónico</span>
+    </mat-error>
+  </mat-form-field>
+  <div class="button-row">
+    <button type="submit" [disabled]="!conductorForm.valid" mat-raised-button color="primary">
+      Guardar
+    </button>
+  </div>
+</form>

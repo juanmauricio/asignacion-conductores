@@ -10,6 +10,7 @@ import { FormControl, FormGroupDirective, FormBuilder, FormGroup, NgForm, Valida
   styleUrls: ['./conductor-crear.component.sass']
 })
 export class ConductorCrearComponent implements OnInit {
+
   conductorForm: FormGroup;
   nombres: string = '';
   apellidos: string = '';

@@ -1,3 +1,34 @@
-<p>
-  vehiculo-crear works!
-</p>
+<div class="button-row">
+  <a mat-raised-button color="primary" [routerLink]="['/vehiculo']">
+    Vehículos
+  </a>
+</div>
+<form [formGroup]="vehiculoForm" (ngSubmit)="onFormSubmit(vehiculoForm.value)">
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Tipo de vehículo" formControlName="tipoVehiculo" [errorStateMatcher]="matcher">
+    <mat-error>
+      <span *ngIf="!vehiculoForm.get('tipoVehiculo').valid && vehiculoForm.get('tipoVehiculo').touched">Por favor
+        ingrese el
+        Tipo de vehículo</span>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Placas" formControlName="placas" [errorStateMatcher]="matcher">
+    <mat-error>
+      <span *ngIf="!vehiculoForm.get('placas').valid && vehiculoForm.get('placas').touched">Por favor ingrese
+        las placas</span>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Fecha SOAT" formControlName="fechaSOAT" [errorStateMatcher]="matcher">
+    <mat-error>
+      <span *ngIf="!vehiculoForm.get('fechaSOAT').valid && vehiculoForm.get('fechaSOAT').touched">Por favor
+        ingrese la fecha del SOAT</span>
+    </mat-error>
+  </mat-form-field>
+  <div class="button-row">
+    <button type="submit" [disabled]="!vehiculoForm.valid" mat-raised-button color="primary">
+      Guardar
+    </button>
+  </div>
+</form>

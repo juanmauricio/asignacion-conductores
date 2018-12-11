@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../servicios/api.service';
 import { DataSource } from '@angular/cdk/collections';
-// import { ApiService } from '../servicios/api.service';
-// import {ConductorDataSource} from './Conductor';
 
 @Component({
   selector: 'app-conductor',

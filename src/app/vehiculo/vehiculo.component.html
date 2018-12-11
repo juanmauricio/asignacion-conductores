@@ -1,3 +1,32 @@
-<p>
-  vehiculo works!
-</p>
+<div class="">
+  <button mat-raised-button color="primary" [routerLink]="['/vehiculo-crear']">+ Nuevo vehículo</button>
+</div>
+<div class="example-container mat-elevation-z8">
+  <table mat-table #table [dataSource]="dataSource">
+    <!-- Columna nombres -->
+    <ng-container matColumnDef="tipoVehiculo">
+      <th mat-header-cell *matHeaderCellDef> Tipo vehículo </th>
+      <td mat-cell *matCellDef="let element" class="nombres-col"> {{element.tipoVehiculo}} </td>
+    </ng-container>
+
+    <!-- Columna Apellidos -->
+    <ng-container matColumnDef="placas">
+      <th mat-header-cell *matHeaderCellDef> Placas </th>
+      <td mat-cell *matCellDef="let element"> {{element.placas}} </td>
+    </ng-container>
+
+    <!-- Columna fechaSOAT -->
+    <ng-container matColumnDef="fechaSOAT">
+      <th mat-header-cell *matHeaderCellDef> Fecha SOAT </th>
+      <td mat-cell *matCellDef="let element"> {{element.fechaSOAT}} </td>
+    </ng-container>
+
+    <!-- Columna fechaSOAT -->
+    <ng-container matColumnDef="estado">
+      <th mat-header-cell *matHeaderCellDef> Estado </th>
+      <td mat-cell *matCellDef="let element"> {{element.estado}} </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="columnas"></tr>
+    <tr mat-row *matRowDef="let row; columns: columnas;" [routerLink]="['/vehiculo-detalle/', row._id]"></tr>
+  </table>
+</div>

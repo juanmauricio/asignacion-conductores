@@ -1,3 +1,44 @@
-<p>
-  vehiculo-detalle works!
-</p>
+<div class="button-row">
+  <a mat-raised-button color="primary" [routerLink]="['/conductor']">
+    Vehículos
+  </a>
+</div>
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title>
+      <h2>Información del vehículo</h2>
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <dl>
+      <dt>
+        <h3>Tipo vehiculo:</h3>
+      </dt>
+      <dd>{{vehiculo.tipoVehiculo}}</dd>
+      <dt>
+        <h3>Placas:</h3>
+      </dt>
+      <dd>{{vehiculo.placas}}</dd>
+      <dt>
+        <h3>Estado:</h3>
+      </dt>
+      <dd>{{vehiculo.estado}}</dd>
+      <dt>
+        <h3>Fecha SOAT:</h3>
+      </dt>
+      <dd>{{vehiculo.fechaSOAT}}</dd>
+      <dt>
+        <h3>Fecha creación</h3>
+      </dt>
+      <dd>{{vehiculo.creado}}</dd>
+    </dl>
+  </mat-card-content>
+  <mat-card-actions>
+    <a mat-raised-button color="primary" [routerLink]="['/vehiculo-editar', vehiculo._id]">
+      Editar
+    </a>
+    <a mat-raised-button color="warn" (click)="eliminarVehiculo(vehiculo._id)">
+      Eliminar
+    </a>
+  </mat-card-actions>
+</mat-card>

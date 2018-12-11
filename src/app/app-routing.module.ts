@@ -33,27 +33,22 @@ const routes: Routes = [
   {
     path: 'vehiculo',
     component: VehiculoComponent,
-    data: { title: 'Listado de vehiculos' }
+    data: { title: 'Listado de vehículos' }
   },
   {
     path: 'vehiculo-detalle/:id',
     component: VehiculoDetalleComponent,
-    data: { title: 'Detalle de vehiculo' }
+    data: { title: 'Detalle de vehículo' }
   },
   {
     path: 'vehiculo-crear',
     component: VehiculoCrearComponent,
-    data: { title: 'Crear vehiculo' }
+    data: { title: 'Crear vehículo' }
   },
   {
     path: 'vehiculo-editar/:id',
     component: VehiculoEditarComponent,
-    data: { title: 'Editar vehiculo' }
-  },
-  {
-    path: '',
-    redirectTo: '/conductor',
-    pathMatch: 'full'
+    data: { title: 'Editar vehículo' }
   }
 ];
 

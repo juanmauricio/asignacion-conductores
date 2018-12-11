@@ -10,6 +10,7 @@ mongoose.connect('mongodb://localhost/asignacion-conductores', { promiseLibrary:
   .catch((err) => console.error(err));
 
 var apiRouter = require('./src/server/routes/conductor-routes');
+var apiRouterVehiculo = require('./src/server/routes/vehiculo-routes');
 
 var app = express();
 
@@ -19,8 +20,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'dist/asignacion-conductores')));
 app.use('/', express.static(path.join(__dirname, 'dist/asignacion-conductores')));
 app.use('/conductor', apiRouter);
+app.use('/vehiculo', apiRouterVehiculo);
 
-// catch 404 and forward to error handler
+// Captura el error 404 y lo maneja.
 app.use(function (req, res, next) {
     next(createError(404));
 });

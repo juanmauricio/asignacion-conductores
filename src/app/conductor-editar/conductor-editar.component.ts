@@ -24,7 +24,6 @@ export class ConductorEditarComponent implements OnInit {
 
   ngOnInit() {
     this.obtenerConductor(this.route.snapshot.params['id']);
-
     this.conductorForm = this.formBuilder.group({
       'nombres': [null, Validators.required],
       'apellidos': [null, Validators.required],
@@ -53,19 +52,19 @@ export class ConductorEditarComponent implements OnInit {
     });
   }
 
-  onFormSubmit(form:NgForm) {
+  onFormSubmit(form: NgForm) {
     this.api.actualizarConductor(this.id, form)
       .subscribe(res => {
-          let id = res['_id'];
-          this.router.navigate(['/conductor-detalle', id]);
-        }, (err) => {
-          console.log(err);
-        }
+        let id = res['_id'];
+        this.router.navigate(['/conductor-detalle', id]);
+      }, (err) => {
+        console.log(err);
+      }
       );
   }
 
   detalleConductor() {
     this.router.navigate(['/conductor-detalle', this.id]);
   }
-  
+
 }

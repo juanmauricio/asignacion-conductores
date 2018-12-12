@@ -45,7 +45,7 @@ export class ApiService {
     return this.http.get(url, httpOptions).pipe(
       map(this.extraerDatos),
       catchError(this.handleError));
-      
+
   }
 
   crearConductor(data): Observable<any> {
@@ -69,4 +69,5 @@ export class ApiService {
         catchError(this.handleError)
       );
   }
+  
 }

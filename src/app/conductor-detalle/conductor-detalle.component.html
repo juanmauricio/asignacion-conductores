@@ -42,6 +42,9 @@
     <a mat-raised-button color="primary" [routerLink]="['/conductor-editar', conductor._id]">
       Editar
     </a>
+    <a mat-raised-button color="primary" [routerLink]="['/conductor-asignacion', conductor._id]">
+      Asignar
+    </a>
     <a mat-raised-button color="warn" (click)="eliminarConductor(conductor._id)">
       Eliminar
     </a>

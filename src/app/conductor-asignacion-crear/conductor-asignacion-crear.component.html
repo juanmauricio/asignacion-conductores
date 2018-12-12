@@ -1,0 +1,42 @@
+<div class="button-row">
+  <a mat-raised-button color="primary" [routerLink]="['/asignacion']">
+    Conductor
+  </a>
+</div>
+<form [formGroup]="asignacionForm" (ngSubmit)="onFormSubmit(asignacionForm.value)">
+  <app-vehiculo-seleccionar></app-vehiculo-seleccionar>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Origen" formControlName="origen" [errorStateMatcher]="matcher">
+    <mat-error>
+      <span *ngIf="!asignacionForm.get('origen').valid && asignacionForm.get('origen').touched">Por favor ingrese el
+        origen</span>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Destino" formControlName="destino" [errorStateMatcher]="matcher">
+    <mat-error>
+      <span *ngIf="!asignacionForm.get('destino').valid && asignacionForm.get('destino').touched">Por favor ingrese
+        el destino</span>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Pasajero" formControlName="pasajero" [errorStateMatcher]="matcher">
+    <mat-error>
+      <span *ngIf="!asignacionForm.get('pasajero').valid && asignacionForm.get('pasajero').touched">Por favor
+        ingrese el pasajero</span>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Empresa" formControlName="empresa" [errorStateMatcher]="matcher">
+    <mat-error>
+      <span *ngIf="!asignacionForm.get('empresa').valid && asignacionForm.get('empresa').touched">Por
+        favor
+        ingrese la empresa</span>
+    </mat-error>
+  </mat-form-field>
+  <div class="button-row">
+    <button type="submit" [disabled]="!asignacionForm.valid" mat-raised-button color="primary">
+      Guardar
+    </button>
+  </div>
+</form>

@@ -11,6 +11,7 @@ mongoose.connect('mongodb://localhost/asignacion-conductores', { promiseLibrary:
 
 var apiRouter = require('./src/server/routes/conductor-routes');
 var apiRouterVehiculo = require('./src/server/routes/vehiculo-routes');
+var apiRouterAsignacion = require('./src/server/routes/asigancion-routes');
 
 var app = express();
 
@@ -21,6 +22,7 @@ app.use(express.static(path.join(__dirname, 'dist/asignacion-conductores')));
 app.use('/', express.static(path.join(__dirname, 'dist/asignacion-conductores')));
 app.use('/conductor', apiRouter);
 app.use('/vehiculo', apiRouterVehiculo);
+app.use('/asignacion', apiRouterAsignacion);
 
 // Captura el error 404 y lo maneja.
 app.use(function (req, res, next) {

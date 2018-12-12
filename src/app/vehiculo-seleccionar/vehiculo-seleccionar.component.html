@@ -1,0 +1,8 @@
+<h4>Vehículos</h4>
+<mat-form-field>
+  <mat-select placeholder="Vehículos"  [(ngModel)]="selectedVehicle">
+    <mat-option *ngFor="let vehiculo of vehiculos" [value]="vehiculo.value">
+      {{vehiculo.viewValue}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>

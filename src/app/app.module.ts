@@ -23,8 +23,13 @@ import {
   MatIconModule,
   MatButtonModule,
   MatCardModule,
-  MatFormFieldModule } from "@angular/material";
+  MatFormFieldModule,
+  MatSelectModule
+} from "@angular/material";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ConductorAsignacionComponent } from './conductor-asignacion/conductor-asignacion.component';
+import { ConductorAsignacionCrearComponent } from './conductor-asignacion-crear/conductor-asignacion-crear.component';
+import { VehiculoSeleccionarComponent } from './vehiculo-seleccionar/vehiculo-seleccionar.component';
 
 @NgModule({
   declarations: [
@@ -36,13 +41,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     VehiculoComponent,
     VehiculoCrearComponent,
     VehiculoDetalleComponent,
-    VehiculoEditarComponent
+    VehiculoEditarComponent,
+    ConductorAsignacionComponent,
+    ConductorAsignacionCrearComponent,
+    VehiculoSeleccionarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule,MatInputModule,
+    HttpClientModule, MatInputModule,
     MatPaginatorModule,
     MatProgressSpinnerModule,
     MatSortModule,
@@ -51,6 +59,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatButtonModule,
     MatCardModule,
     MatFormFieldModule,
+    MatSelectModule,
     ReactiveFormsModule,
     BrowserAnimationsModule
   ],

@@ -4,10 +4,14 @@ import { ConductorComponent } from './conductor/conductor.component';
 import { ConductorDetalleComponent } from './conductor-detalle/conductor-detalle.component';
 import { ConductorCrearComponent } from './conductor-crear/conductor-crear.component';
 import { ConductorEditarComponent } from './conductor-editar/conductor-editar.component';
+import { ConductorAsignacionComponent } from './conductor-asignacion/conductor-asignacion.component';
+import { ConductorAsignacionCrearComponent } from './conductor-asignacion-crear/conductor-asignacion-crear.component';
+
 import { VehiculoComponent } from './vehiculo/vehiculo.component';
 import { VehiculoCrearComponent } from './vehiculo-crear/vehiculo-crear.component';
 import { VehiculoDetalleComponent } from './vehiculo-detalle/vehiculo-detalle.component';
 import { VehiculoEditarComponent } from './vehiculo-editar/vehiculo-editar.component';
+
 
 const routes: Routes = [
   {
@@ -49,7 +53,19 @@ const routes: Routes = [
     path: 'vehiculo-editar/:id',
     component: VehiculoEditarComponent,
     data: { title: 'Editar vehículo' }
+  },
+  {
+    path: 'conductor-asignacion/:id',
+    component: ConductorAsignacionComponent,
+    data: { title: 'Asignar vehículo a conductor' }
+  },
+  {
+    path: 'asignacion-crear/:id',
+    component: ConductorAsignacionCrearComponent,
+    data: { title: 'Nueva asignación' }
   }
+
+
 ];
 
 @NgModule({

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ApiService } from '../servicios/api.service';
-import { DataSource } from '@angular/cdk/collections';
+// import { DataSource } from '@angular/cdk/collections';
 import { FormControl, FormGroupDirective, FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 
 @Component({
@@ -13,7 +13,7 @@ export class ConductorCrearComponent implements OnInit {
 
   conductorForm: FormGroup;
   nombres: string = '';
-  apellidos: string = '';
+  // apellidos: string = '';
   tipoDocumento: string = '';
   numeroDocumento: string = ''
   estado: string = '';
@@ -24,7 +24,6 @@ export class ConductorCrearComponent implements OnInit {
   constructor(private router: Router, private api: ApiService, private formBuilder: FormBuilder) { }
 
   ngOnInit() {
-    //Validación inicial de los campos
     this.conductorForm = this.formBuilder.group({
       'nombres': [null, Validators.required],
       'apellidos': [null, Validators.required],
@@ -32,7 +31,7 @@ export class ConductorCrearComponent implements OnInit {
       'numeroDocumento': [null, Validators.required],
       'direccion': [null, Validators.required],
       'telefono': [null, Validators.required],
-      'correoElectronico': [null, Validators.required],
+      'correoElectronico': [null, Validators.required]
     })
   }
 

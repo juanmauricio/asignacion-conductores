@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router'
+import { Router, ActivatedRoute } from '@angular/router';
 import { ApiService } from '../servicios/api.service';
 import { FormControl, FormGroupDirective, FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 
@@ -11,6 +11,7 @@ import { FormControl, FormGroupDirective, FormBuilder, FormGroup, NgForm, Valida
 export class ConductorEditarComponent implements OnInit {
 
   constructor(private router: Router, private route: ActivatedRoute, private api: ApiService, private formBuilder: FormBuilder) { }
+
   conductorForm: FormGroup;
   id: string = '';
   nombres: string = '';
@@ -66,5 +67,4 @@ export class ConductorEditarComponent implements OnInit {
   detalleConductor() {
     this.router.navigate(['/conductor-detalle', this.id]);
   }
-
 }

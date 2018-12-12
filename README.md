@@ -26,7 +26,8 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
-##Debe permitir métodos CRUD para gestionar los datos básicos de cada conductor: Nombres, apellidos, tipo documento, número documento y los demás que usted considere necesarios. OK - COMPONENTES CRUD DESARROLLADOS.
+-Debe permitir métodos CRUD para gestionar los datos básicos de cada conductor: Nombres, apellidos, tipo documento, número documento y los demás que usted considere necesarios. OK - COMPONENTES CRUD DESARROLLADOS.
+
 -Debe permitir métodos CRUD para la gestión de los datos básicos de cada uno de los vehículos de su flota: Tipo vehículo, placas, Fecha SOAT y los demás que usted considere necesarios. OK - COMPONENTES CRUD DESARROLLADOS.
 -Debe permitir asignar/desasignar manualmente un conductor a una flota indicando para cada asignación la ubicación de origen y destino (Puntos extra si se conecta con un api de Mapas como Google o Bing), pasajero, empresa, y los demás datos que usted considere necesarios. -  OK - COMPONENTES CRUD DESARROLLADOS.  PENDIENTE  INTEGRACIÓN API MAPAS
 -Debe tener cuidado de no permitir colisiones entre asignaciones, es decir, no debe permitir que un conductor y/o vehículo tenga dos asignaciones a dos rutas diferentes en el mismo punto del tiempo. PENDIENTE.
